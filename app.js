@@ -1,7 +1,4 @@
-courses = courses.sort((a, b) => (a.period > b.period ? -1 : 1));
-
 for (const subject in courses) {
-    
     if (document.getElementById(`period_${courses[subject].period}`)) {
         document.getElementById(`period_${courses[subject].period}`).innerHTML += `
             <div class="subject" id="${subject}">
@@ -68,20 +65,20 @@ function getConcludedHours() {
             temp += parseInt(courses[element].CH)
         }
     }
-    return temp 
+    return temp
 }
 
-function getTotalHours () {
+function getTotalHours() {
     let temp = 0;
     for (const element in courses) {
         temp += parseInt(courses[element].CH)
     }
-    return temp 
+    return temp
 }
 
 function updateProgress() {
     let concludedHours = getConcludedHours();
-    
+
     const larguraTotal = document.documentElement.clientWidth;
     const larguraConcluida = (concludedHours / totalHours) * larguraTotal;
 
@@ -203,30 +200,28 @@ allInfoButton.forEach((infoButton) => {
                 </div>
                 <div class="preRequisitos"> 
                     <ul>    
-                        ${ 
-                            subject.required
-                                ? `<h4> Pré-requisitos: </h4>` +
-                                subject.required
-                                    .map((required) => {
-                                        return `<li>${courses[required].name}</li>`;
-                                    })
-                                    .join("")
-                                : ``
-                        }
+                        ${subject.required
+                ? `<h4> Pré-requisitos: </h4>` +
+                subject.required
+                    .map((required) => {
+                        return `<li>${courses[required].name}</li>`;
+                    })
+                    .join("")
+                : ``
+            }
                     </ul>
                 </div>
                 <div class="desbloqueia"> 
                     <ul>
-                        ${
-                            subject.unlocks
-                                ? `<h4> Desbloqueia: </h4>` +
-                                subject.unlocks
-                                    .map((unlock) => {
-                                        return `<li>${courses[unlock].name}</li>`;
-                                    })
-                                    .join("")
-                                : ``
-                        }
+                        ${subject.unlocks
+                ? `<h4> Desbloqueia: </h4>` +
+                subject.unlocks
+                    .map((unlock) => {
+                        return `<li>${courses[unlock].name}</li>`;
+                    })
+                    .join("")
+                : ``
+            }
                     </ul>
                 </div>
             </div>
