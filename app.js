@@ -1,3 +1,32 @@
+courses = courses.sort((a, b) => (a.period > b.period ? -1 : 1));
+
+for (const subject in courses) {
+    
+    if (document.getElementById(`period_${courses[subject].period}`)) {
+        document.getElementById(`period_${courses[subject].period}`).innerHTML += `
+            <div class="subject" id="${subject}">
+                <h3>${courses[subject].name}</h3>
+                <img src="info.svg" id="" class="info_button" style="width: 1rem;">
+            </div>
+        `
+    } else {
+        document.getElementById('fluxograma').innerHTML += `
+            <div class="period" id="period_${courses[subject].period}">
+                <div class="check_period" id="check_${courses[subject].period}periodo">
+                    <h4>${courses[subject].period}º Período</h4>
+                    <input type="checkbox" class="check_semester">
+                </div>
+
+                <div class="subject" id="${subject}">
+                    <h3>${courses[subject].name}</h3>
+                    <img src="info.svg" id="" class="info_button" style="width: 1rem;">
+                </div>
+            </div>
+        `
+    }
+}
+
+
 /* Constants (HTML elements) */
 const checkAllPeriod = document.querySelectorAll(".check_semester");
 const allSubject = document.querySelectorAll(".subject");
@@ -58,13 +87,7 @@ function updateProgress() {
 
     progressBar.style.width = `${larguraConcluida}px`
     progressBar.innerHTML = `<p>${concludedHours} / ${totalHours}</p>`
-
-
-
 }
-
-
-/* PROGRESS MODE */
 
 function unlockSubjects(subject) {
     if (courses[subject.id].unlocks) {
@@ -83,6 +106,8 @@ function unlockSubjects(subject) {
         });
     }
 }
+
+/* PROGRESS MODE */
 
 allSubject.forEach((subject) => {
     subject.addEventListener("click", () => {
@@ -103,7 +128,7 @@ allSubject.forEach((subject) => {
     });
 });
 
-// marcar todas as matérias de um período
+// check all subjects in a period
 checkAllPeriod.forEach(function (checkAllCheckbox) {
     checkAllCheckbox.addEventListener("change", function () {
         const periodContainer = checkAllCheckbox.parentElement.parentElement;
@@ -160,7 +185,6 @@ allSubject.forEach((subject) => {
     });
 });
 
-
 /* SIDEBAR */
 
 allInfoButton.forEach((infoButton) => {
@@ -215,7 +239,7 @@ allInfoButton.forEach((infoButton) => {
     });
 });
 
-// Event listener to hide the sidebar when clicking outside
+// hide the sidebar when clicking outside
 document.body.addEventListener("click", function (event) {
     if (!sidebar.contains(event.target)) {
         hideSidebar();

@@ -246,7 +246,7 @@ const courses = {
     // Linha projetos
     "banco_dados": {
         "name": "Banco de Dados",
-        "period": 5,
+        "period": 4,
         "code": "RCM 021",
         "type": "OB",
         "CH": 64,
@@ -261,7 +261,7 @@ const courses = {
     },
     "projeto_banco_dados": {
         "name": "Projeto de Banco de Dados",
-        "period": 7,
+        "period": 6,
         "code": "RCM 022",
         "type": "OB",
         "CH": 64,
@@ -285,7 +285,7 @@ const courses = {
     },
     "desenvolvimento_web": {
         "name": "Desenvolvimento Web",
-        "period": 6,
+        "period": 5,
         "code": "RCM 057",
         "type": "OB",
         "CH": 64,
