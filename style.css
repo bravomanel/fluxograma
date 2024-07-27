@@ -13,6 +13,7 @@ Green: #449e48 (OR this green ?)
     padding: 0;
     box-sizing: border-box;
     font-family: "Lato", sans-serif;
+    scrollbar-color: #777 #282828;
 }
 
 body {
@@ -144,39 +145,39 @@ body {
     transform: translate(-100%, 0);
 }
 
-.sidebar h2{
-    text-align: center; 
+.sidebar h2 {
+    text-align: center;
 }
 
-.sidebar .sidebarContent .someInfo{
+.sidebar .sidebarContent .someInfo {
     background-color: #3a3a3a;
 
     margin-top: 10px;
     margin-left: 10px;
-    margin-right: 10px;   
-    
+    margin-right: 10px;
+
     border-radius: 0.5rem;
     padding: 10px;
 }
 
-.sidebar .sidebarContent .preRequisitos{
+.sidebar .sidebarContent .preRequisitos {
     background-color: #3a3a3a;
 
     margin-top: 10px;
     margin-left: 10px;
-    margin-right: 10px;   
-    
+    margin-right: 10px;
+
     border-radius: 0.5rem;
     padding: 10px;
 }
 
-.sidebar .sidebarContent .desbloqueia{
+.sidebar .sidebarContent .desbloqueia {
     background-color: #3a3a3a;
 
     margin-top: 10px;
     margin-left: 10px;
-    margin-right: 10px;   
-    
+    margin-right: 10px;
+
     border-radius: 0.5rem;
     padding: 10px;
 }
@@ -187,7 +188,7 @@ body {
     padding: 0;
 }
 
-.sidebar .sidebarContent li{
+.sidebar .sidebarContent li {
     margin-top: 5px;
 }
 
@@ -199,9 +200,10 @@ body {
     padding: 0;
     width: 100%;
     z-index: 1;
-    background-color:    #242424;
+    background-color: #242424;
     font-size: 1rem;
 }
+
 #progressBar {
     background-color: #449e48;
     height: 1rem;
@@ -212,4 +214,28 @@ body {
     color: white;
     font-size: 1rem;
     z-index: 2;
+}
+
+::-webkit-scrollbar {
+    width: .75rem;
+    height: .75rem;
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-corner {
+    background: #282828;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #777;
+    border-radius: 2rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+::-webkit-resizer,
+::-webkit-scrollbar-button {
+    display: none;
 }
