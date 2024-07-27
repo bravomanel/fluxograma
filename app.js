@@ -29,6 +29,7 @@ const checkAllPeriod = document.querySelectorAll(".check_semester");
 const allSubject = document.querySelectorAll(".subject");
 const allInfoButton = document.querySelectorAll(".info_button");
 const progressBar = document.getElementById("progressBar");
+const progressText = document.getElementById("progressText");
 const sidebar = document.getElementById("sidebar");
 const totalHours = getTotalHours();
 
@@ -82,8 +83,8 @@ function updateProgress() {
     const larguraTotal = document.documentElement.clientWidth;
     const larguraConcluida = (concludedHours / totalHours) * larguraTotal;
 
+    progressText.innerHTML = `<p>${concludedHours} / ${totalHours}</p>`
     progressBar.style.width = `${larguraConcluida}px`
-    progressBar.innerHTML = `<p>${concludedHours} / ${totalHours}</p>`
 }
 
 function unlockByProgress() {
