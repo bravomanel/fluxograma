@@ -494,9 +494,7 @@ const courses = {
         "code": "RCM 082",
         "type": "OB",
         "CH": 64,
-        "CHrequired": [
-            "1440h",
-        ]
+        "CHrequired": 1440
     },
     "empreendedorismo": {
         "name": "Empreendedorismo",
@@ -504,9 +502,7 @@ const courses = {
         "code": "REG 001",
         "type": "OB",
         "CH": 32,
-        "CHrequired": [
-            "1440h",
-        ]
+        "CHrequired": 1440
     },
     "proj_extensao_1": {
         "name": "Projeto de Extensão",
@@ -552,9 +548,7 @@ const courses = {
         "code": "REG 057",
         "type": "OB",
         "CH": 32,
-        "CHrequired": [
-            "1440h",
-        ]
+        "CHrequired": 1440
     },
     "atividade_complementar": {
         "name": "Atividades Complementares",

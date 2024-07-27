@@ -86,6 +86,18 @@ function updateProgress() {
     progressBar.innerHTML = `<p>${concludedHours} / ${totalHours}</p>`
 }
 
+function unlockByProgress() {
+    for (const element in courses) {
+        if (courses[element].CHrequired) {
+            if (getConcludedHours() >= courses[element].CHrequired) {
+                document.getElementById(element).classList.add("unlocked");
+            } else {
+                document.getElementById(element).classList.remove("unlocked");
+            }
+        }
+    }
+}
+
 function unlockSubjects(subject) {
     if (courses[subject.id].unlocks) {
         courses[subject.id].unlocks.forEach((unlock) => {
@@ -118,9 +130,8 @@ allSubject.forEach((subject) => {
             localStorage.setItem("progressHistory", JSON.stringify(progressHistory));
         }
         unlockSubjects(subject);
-        // Atualiza barra de progresso e quantidade de horas concluidas 
+        unlockByProgress();
         updateProgress();
-        // Verifica se todas as matérias do período estão finalizadas, e marca o check_semester se for, ou desmarca se não
         updateCheckSemester(subject);
     });
 });
@@ -146,6 +157,7 @@ checkAllPeriod.forEach(function (checkAllCheckbox) {
             unlockSubjects(subject);
         });
         updateProgress()
+        unlockByProgress()
     });
 });
 
@@ -199,7 +211,8 @@ allInfoButton.forEach((infoButton) => {
                     <p>Tipo: ${subject.type}</p>
                 </div>
                 <div class="preRequisitos"> 
-                    <ul>    
+                    <ul>
+                        ${subject.CHrequired ? subject.CHrequired : ``}
                         ${subject.required
                 ? `<h4> Pré-requisitos: </h4>` +
                 subject.required
@@ -259,3 +272,4 @@ if (localStorage.getItem("progressHistory")) {
 }
 
 updateProgress();
+unlockByProgress();
