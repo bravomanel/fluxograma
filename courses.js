@@ -160,7 +160,8 @@ const courses = {
         ],
         "unlocks": [
             "sistemas_operacionais",
-            "redes_1"
+            "redes_1",
+            "tcc_1"
         ]
     },
     "paradigmas_programacao": {
@@ -233,6 +234,9 @@ const courses = {
         "CH": 64,
         "required": [
             "calculo_2"
+        ],
+        "unlocks": [
+            "tcc_1"
         ]
     },
     "analise_projeto_algoritmo": {
@@ -245,7 +249,8 @@ const courses = {
             "estrutura_dados"
         ],
         "unlocks": [
-            "algoritmo_grafos"
+            "algoritmo_grafos",
+            "tcc_1"
         ]
     },
     "banco_dados": {
@@ -260,7 +265,8 @@ const courses = {
         "unlocks": [
             "projeto_arquitetura_software",
             "projeto_banco_dados",
-            "desenvolvimento_web"
+            "desenvolvimento_web",
+            "tcc_1"
         ]
     },
     "engenharia_software_1": {
@@ -274,7 +280,8 @@ const courses = {
             "estrutura_dados"
         ],
         "unlocks": [
-            "projeto_arquitetura_software"
+            "projeto_arquitetura_software",
+            "tcc_1"
         ]
     },
     "fisica_computacional": {
@@ -288,6 +295,9 @@ const courses = {
         ],
         "correrequisite": [
             "fisica_3a"
+        ],
+        "unlocks": [
+            "tcc_1"
         ]
     },
     "fisica_3a": {
@@ -302,6 +312,9 @@ const courses = {
         ],
         "correrequisite": [
             "fisica_computacional"
+        ],
+        "unlocks": [
+            "tcc_1"
         ]
     },
     "prob_est": {
@@ -315,7 +328,8 @@ const courses = {
             "calculo_2"
         ],
         "unlocks": [
-            "inteligencia_artificial"
+            "inteligencia_artificial",
+            "tcc_1"
         ]
     },
     "sistemas_operacionais": {
@@ -481,8 +495,15 @@ const courses = {
         "code": "RCM 084",
         "type": "OB",
         "CH": 32,
-        "CHrequired": [
-            "os 4 primeiros periodos",
+        "required": [
+            "arquitetura_computadores",
+            "calculo_3",
+            "analise_projeto_algoritmo",
+            "banco_dados",
+            "engenharia_software_1",
+            "fisica_computacional",
+            "fisica_3a",
+            "prob_est"
         ],
         "unlocks": [
             "tcc_2",
