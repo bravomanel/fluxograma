@@ -73,20 +73,20 @@ h3 {
 }
 
 .unlocked {
-    background-color: var(--green);
+    background-color: var(--blue);
 }
 
 .finished {
-    background-color: var(--blue);
+    background-color: var(--green);
     color: var(--white);
 }
 
 .required {
-    border: 2px solid var(--red);
+    border: 4px solid var(--red);
 }
 
 .unlocks {
-    border: 2px solid var(--strong-green);
+    border: 4px solid var(--strong-green);
 }
 
 .active {
@@ -124,7 +124,7 @@ h3 {
 }
 
 .check_semester:checked {
-    background-color: var(--blue);
+    background-color: var(--green);
 }
 
 .check_semester:checked::before {
