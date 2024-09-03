@@ -1,23 +1,26 @@
-/*
-UFF COLORS: 
-White: ???
-Blue: #0058A9
-Blue2: #215CAA
-Yellow: #F6CF19
-Green: #0B6951 (this green ?)
-Green: #449e48 (OR this green ?)
-*/
+:root {
+    --dark-gray: #242424;
+    --medium-dark-gray: #333;
+    --medium-gray: #444;
+    --light-gray: #777;
+    --red: #EE0000;
+    --green: #449e48;
+    --strong-green: #33d83b;
+    --blue: #0058A9;
+    --strong-blue: #0011ee;
+    --white: #FFF;
+}
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Lato", sans-serif;
-    scrollbar-color: #777 #282828;
+    scrollbar-color: var(--light-gray) var(--medium-dark-gray);
 }
 
 body {
-    background-color: #242424;
+    background-color: var(--dark-gray);
 }
 
 .hidden {
@@ -36,8 +39,8 @@ body {
 
 .subject {
     position: relative;
-    color: white;
-    border: 1px solid #404040;
+    color: var(--white);
+    border: 1px solid var(--medium-gray);
     min-width: 8rem;
     width: 12vw;
     max-width: 12rem;
@@ -47,9 +50,13 @@ body {
     align-items: center;
     justify-content: center;
     margin: 1.4rem;
-    background-color: #3a3a3a;
+    background-color: var(--medium-gray);
     border-radius: 16px;
     box-shadow: 8px 8px 10px -6px rgba(0, 0, 0, 0.75);
+}
+
+h3 {
+    font-size: 1rem;
 }
 
 .subject img {
@@ -60,30 +67,30 @@ body {
 
 .subject:hover {
     cursor: pointer;
-    color: white;
+    color: var(--white);
     transition: 0.3s;
     transform: translateY(-10px);
 }
 
 .unlocked {
-    background-color: #449e48;
+    background-color: var(--green);
 }
 
 .finished {
-    background-color: #1765a8;
-    color: white;
+    background-color: var(--blue);
+    color: var(--white);
 }
 
 .required {
-    border: 2px solid red;
+    border: 2px solid var(--red);
 }
 
 .unlocks {
-    border: 2px solid #5ee265;
+    border: 2px solid var(--strong-green);
 }
 
 .active {
-    border: 2px solid blue;
+    border: none;
 }
 
 .check_period {
@@ -93,7 +100,7 @@ body {
     align-items: end;
     justify-content: center;
     margin-top: 2rem;
-    color: white;
+    color: var(--white);
 }
 
 .check_semester {
@@ -109,20 +116,21 @@ body {
     height: 1.75rem;
     cursor: pointer;
 
-    color: #242424;
-    background-color: #3a3a3a;
-    border: 1px solid #555;
+    color: var(--dark-gray);
+    background-color: var(--medium-gray);
+    border: 1px solid var(--medium-gray);
     border-radius: 4px;
+    box-shadow: 8px 8px 10px -6px rgba(0, 0, 0, 0.5);
 }
 
 .check_semester:checked {
-    background-color: #1765a8;
+    background-color: var(--blue);
 }
 
 .check_semester:checked::before {
     content: "✔";
     font-size: 1.5rem;
-    color: #FFF;
+    color: var(--white);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -147,9 +155,9 @@ body {
     margin: 0;
     padding: 0;
 
-    background-color: #242424;
-    border: 2px solid #454545;
-    color: white;
+    background-color: var(--dark-gray);
+    border: 2px solid var(--medium-gray);
+    color: var(--white);
 }
 
 #closeSidebarButton {
@@ -166,7 +174,7 @@ body {
 }
 
 .sidebar .sidebarContent .someInfo {
-    background-color: #3a3a3a;
+    background-color: var(--medium-gray);
 
     margin-top: 10px;
     margin-left: 10px;
@@ -177,7 +185,7 @@ body {
 }
 
 .sidebar .sidebarContent .preRequisitos {
-    background-color: #3a3a3a;
+    background-color: var(--medium-gray);
 
     margin-top: 10px;
     margin-left: 10px;
@@ -188,7 +196,7 @@ body {
 }
 
 .sidebar .sidebarContent .desbloqueia {
-    background-color: #3a3a3a;
+    background-color: var(--medium-gray);
 
     margin-top: 10px;
     margin-left: 10px;
@@ -217,13 +225,14 @@ body {
     padding: 0;
     width: 90%;
     z-index: 1;
-    background-color: #242424;
-    border: 2px solid #3a3a3a;
+    background-color: var(--dark-gray);
+    border: 2px solid var(--medium-gray);
     border-radius: 1rem;
+    box-shadow: 8px 8px 10px -6px rgba(0, 0, 0, 0.5);
 }
 
 #progressBar {
-    background-color: #449e48;
+    background-color: var(--green);
     height: 1.25rem;
     border-radius: 1rem;
     transition: width 0.5s ease-out;
@@ -231,7 +240,7 @@ body {
 
 #progressText {
     position: fixed;
-    color: white;
+    color: var(--white);
     text-align: center;
     top: 0.125rem;
     left: 50%;
@@ -247,16 +256,16 @@ body {
 
 ::-webkit-scrollbar-track,
 ::-webkit-scrollbar-corner {
-    background: #282828;
+    background: var(--medium-dark-gray);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #777;
+    background: var(--light-gray);
     border-radius: 2rem;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    background: var(--medium-dark-gray);
 }
 
 ::-webkit-resizer,
