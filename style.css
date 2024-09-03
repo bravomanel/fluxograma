@@ -58,25 +58,6 @@ body {
     right: 0.5rem;
 }
 
-.checkbox {
-    margin-left: 6px;
-}
-
-.check_period {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    margin-top: 1.7rem;
-    color: white;
-}
-
-.check_period input[type="checkbox"] {
-    margin-top: 0.5rem;
-    transform: scale(1.5);
-}
-
 .subject:hover {
     cursor: pointer;
     color: white;
@@ -105,13 +86,50 @@ body {
     border: 2px solid blue;
 }
 
-/* #p2::after {
-    content: '';
-    position: absolute; top: 0; left: 50%;
-    border-top: 1px solid #b0b0b0;
-    width: 0;
-    height: 20px;
-} */
+.check_period {
+    display: flex;
+    flex-direction: row;
+    text-align: end;
+    align-items: end;
+    justify-content: center;
+    margin-top: 1.7rem;
+    color: white;
+}
+
+.check_semester {
+    position: relative;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    margin-right: 1rem;
+    margin-top: 0.5rem;
+
+    width: 1.75rem;
+    height: 1.75rem;
+    cursor: pointer;
+
+    color: #242424;
+    background-color: #3a3a3a;
+    border: 1px solid #555;
+    border-radius: 4px;
+
+}
+
+.check_semester:checked {
+    background-color: #1765a8;
+}
+
+.check_semester:checked::before {
+    content: "✔";
+    font-size: 1.5rem;
+    color: #FFF;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -55%);
+}
+
 
 .sidebar {
     display: flex;
@@ -132,7 +150,6 @@ body {
 
     background-color: #242424;
     border: 2px solid #454545;
-    /*border-radius: 2rem 0 0 2rem;*/
     color: white;
 }
 
