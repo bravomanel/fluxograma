@@ -10,7 +10,7 @@ for (const subject in courses) {
         document.getElementById('fluxograma').innerHTML += `
             <div class="period" id="period_${courses[subject].period}">
                 <div class="check_period" id="check_${courses[subject].period}periodo">
-                <input type="checkbox" class="check_semester">
+                    <input type="checkbox" class="check_semester">
                     <h4>${courses[subject].period}º Período</h4>
                 </div>
 
