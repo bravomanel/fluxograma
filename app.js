@@ -80,7 +80,7 @@ function getTotalHours() {
 function updateProgress() {
     let concludedHours = getConcludedHours();
 
-    const larguraTotal = document.documentElement.clientWidth;
+    const larguraTotal = (document.documentElement.clientWidth * 0.9) - 4;
     const larguraConcluida = (concludedHours / totalHours) * larguraTotal;
 
     progressText.innerHTML = `<p>${concludedHours} / ${totalHours}</p>`
