@@ -142,80 +142,74 @@ h3 {
 .sidebar {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: nowrap;
 
     position: fixed;
-    top: 0%;
+    top: 50%;
     left: 100%;
-    transform: translate(-100%, 0%);
+    transform: translate(-100%, -50%);
 
-    width: 16rem;
-    height: 100%;
+    min-width: 18rem;
+    max-width: 40vw;
+    min-height: 12rem;
+    max-height: 80vh;
 
-    margin: 0;
-    padding: 0;
+    padding: 1rem;
 
     background-color: var(--dark-gray);
     border: 2px solid var(--medium-gray);
     border-radius: 1rem 0 0 1rem;
     color: var(--white);
+
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
-#close-sidebar-button {
-    display: block;
-    z-index: 2;
+
+.sidebar h2 {
+    margin: 0.5rem 3rem;
+}
+
+.close-btn {
     position: fixed;
-    top: 2%;
-    left: 98%;
-    transform: translate(-100%, 0);
+    top: 0%;
+    left: 100%;
+    transform: translate(-100%, 0%);
+
+    width: 40px;
+    height: 40px;
+
+    background-color: var(--dark-gray);
+    border: none;
+    border-bottom: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.close-btn::before,
+.close-btn::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background-color: var(--light-gray);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.close-btn::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 .sidebar h2 {
     text-align: center;
 }
 
-.sidebar .sidebar-content .some-info {
-    background-color: var(--medium-gray);
-
-    margin-top: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-
-    border-radius: 0.5rem;
-    padding: 10px;
-}
-
-.sidebar .sidebar-content .pre-requisitos {
-    background-color: var(--medium-gray);
-
-    margin-top: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-
-    border-radius: 0.5rem;
-    padding: 10px;
-}
-
-.sidebar .sidebar-content .desbloqueia {
-    background-color: var(--medium-gray);
-
-    margin-top: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-
-    border-radius: 0.5rem;
-    padding: 10px;
-}
-
-.sidebar .sidebar-content ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.sidebar .sidebar-content li {
-    margin-top: 5px;
+.some-info,
+.pre-requisitos,
+.desbloqueia {
+    margin: 0.5rem 1rem;
 }
 
 #progress-div {
