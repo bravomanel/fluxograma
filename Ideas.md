@@ -25,7 +25,7 @@
 ### Styles to change/add:
 
 -   [ ] Customize scroll bar (for now)
--   [ ] checkbox (check_semester)
+-   [ ] checkbox (check-semester)
 -   [ ] Sidebar
 
 ### Features to add:

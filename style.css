@@ -2,7 +2,8 @@
     --dark-gray: #242424;
     --medium-dark-gray: #333;
     --medium-gray: #444;
-    --light-gray: #777;
+    --gray: #777;
+    --light-gray: #aaa;
     --red: #EE0000;
     --green: #449e48;
     --strong-green: #33d83b;
@@ -16,7 +17,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Lato", sans-serif;
-    scrollbar-color: var(--light-gray) var(--medium-dark-gray);
+    scrollbar-color: var(--gray) var(--medium-dark-gray);
 }
 
 body {
@@ -86,7 +87,7 @@ h3 {
 }
 
 .unlocks {
-    border: 4px solid var(--strong-green);
+    border: 4px solid var(--white);
 }
 
 .active {
@@ -103,7 +104,7 @@ h3 {
     color: var(--white);
 }
 
-.check_semester {
+.check-semester {
     position: relative;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -123,11 +124,11 @@ h3 {
     box-shadow: 8px 8px 10px -6px rgba(0, 0, 0, 0.5);
 }
 
-.check_semester:checked {
+.check-semester:checked {
     background-color: var(--green);
 }
 
-.check_semester:checked::before {
+.check-semester:checked::before {
     content: "✔";
     font-size: 1.5rem;
     color: var(--white);
@@ -157,10 +158,11 @@ h3 {
 
     background-color: var(--dark-gray);
     border: 2px solid var(--medium-gray);
+    border-radius: 1rem 0 0 1rem;
     color: var(--white);
 }
 
-#closeSidebarButton {
+#close-sidebar-button {
     display: block;
     z-index: 2;
     position: fixed;
@@ -173,7 +175,7 @@ h3 {
     text-align: center;
 }
 
-.sidebar .sidebarContent .someInfo {
+.sidebar .sidebar-content .some-info {
     background-color: var(--medium-gray);
 
     margin-top: 10px;
@@ -184,7 +186,7 @@ h3 {
     padding: 10px;
 }
 
-.sidebar .sidebarContent .preRequisitos {
+.sidebar .sidebar-content .pre-requisitos {
     background-color: var(--medium-gray);
 
     margin-top: 10px;
@@ -195,7 +197,7 @@ h3 {
     padding: 10px;
 }
 
-.sidebar .sidebarContent .desbloqueia {
+.sidebar .sidebar-content .desbloqueia {
     background-color: var(--medium-gray);
 
     margin-top: 10px;
@@ -206,17 +208,17 @@ h3 {
     padding: 10px;
 }
 
-.sidebar .sidebarContent ul {
+.sidebar .sidebar-content ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
-.sidebar .sidebarContent li {
+.sidebar .sidebar-content li {
     margin-top: 5px;
 }
 
-#progressDiv {
+#progress-div {
     position: fixed;
     top: 0;
     left: 50%;
@@ -231,14 +233,14 @@ h3 {
     box-shadow: 8px 8px 10px -6px rgba(0, 0, 0, 0.5);
 }
 
-#progressBar {
+#progress-bar {
     background-color: var(--green);
     height: 1.25rem;
     border-radius: 1rem;
     transition: width 0.5s ease-out;
 }
 
-#progressText {
+#progress-text {
     position: fixed;
     color: var(--white);
     text-align: center;
@@ -260,7 +262,7 @@ h3 {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--light-gray);
+    background: var(--gray);
     border-radius: 2rem;
 }
 

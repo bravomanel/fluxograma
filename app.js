@@ -3,20 +3,20 @@ for (const subject in courses) {
         document.getElementById(`period_${courses[subject].period}`).innerHTML += `
             <div class="subject" id="${subject}">
                 <h3>${courses[subject].name}</h3>
-                <img src="info.svg" id="" class="info_button" style="width: 1rem;">
+                <img src="info.svg" id="" class="info-button" style="width: 1rem;">
             </div>
         `
     } else {
         document.getElementById('fluxograma').innerHTML += `
             <div class="period" id="period_${courses[subject].period}">
                 <div class="check_period" id="check_${courses[subject].period}periodo">
-                    <input type="checkbox" class="check_semester">
+                    <input type="checkbox" class="check-semester">
                     <h4>${courses[subject].period}º Período</h4>
                 </div>
 
                 <div class="subject" id="${subject}">
                     <h3>${courses[subject].name}</h3>
-                    <img src="info.svg" id="" class="info_button" style="width: 1rem;">
+                    <img src="info.svg" id="" class="info-button" style="width: 1rem;">
                 </div>
             </div>
         `
@@ -25,11 +25,11 @@ for (const subject in courses) {
 
 
 /* Constants (HTML elements) */
-const checkAllPeriod = document.querySelectorAll(".check_semester");
+const checkAllPeriod = document.querySelectorAll(".check-semester");
 const allSubject = document.querySelectorAll(".subject");
-const allInfoButton = document.querySelectorAll(".info_button");
-const progressBar = document.getElementById("progressBar");
-const progressText = document.getElementById("progressText");
+const allInfoButton = document.querySelectorAll(".info-button");
+const progressBar = document.getElementById("progress-bar");
+const progressText = document.getElementById("progress-text");
 const sidebar = document.getElementById("sidebar");
 const totalHours = getTotalHours();
 
@@ -56,7 +56,7 @@ function updateCheckSemester(subject) {
         return e.classList.contains("finished");
     });
 
-    periodContainer.querySelector(".check_semester").checked = allChecked;
+    periodContainer.querySelector(".check-semester").checked = allChecked;
 }
 
 function getConcludedHours() {
@@ -203,46 +203,50 @@ allInfoButton.forEach((infoButton) => {
         sidebar.classList.remove("hidden");
 
         sidebar.innerHTML = `
-                <button type="button" id="closeSidebarButton">X</button>
+                <button class="close-btn" id="close-sidebar-button" aria-label="Close"></button>
                 <h2>${subject.name}</h2>
-            <div class="sidebarContent"> 
-                <div class="someInfo">
-                    <p>Período: ${subject.period}</p>
-                    <p>Código: ${subject.code}</p>
-                    <p>Tipo: ${subject.type}</p>
-                </div>
-                <div class="preRequisitos"> 
-                    <ul>
-                        ${subject.CHrequired ? subject.CHrequired : ``}
-                        ${subject.required
-                ? `<h4> Pré-requisitos: </h4>` +
-                subject.required
-                    .map((required) => {
-                        return `<li>${courses[required].name}</li>`;
-                    })
-                    .join("")
-                : ``
-            }
+                <div class="sidebar-content"> 
+                    <div class="some-info">
+                        <p>Período: ${subject.period}</p>
+                        <p>Código: ${subject.code}</p>
+                        <p>Tipo: ${subject.type}</p>
+                        <p>Carga Horária: ${subject.CH}h</p>
+                    </div>`;
+
+        if (subject.required) {
+            sidebar.innerHTML += `
+                <div class="pre-requisitos"> 
+                    <h4> Pré-requisitos: </h4>
+                        <ul>
+                        ${subject.required.map((required) => {
+                            return `<li>${courses[required].name}</li>`;
+                            }).join("")
+                        }
                     </ul>
-                </div>
-                <div class="desbloqueia"> 
+                </div>`;
+        }
+
+        if (subject.unlocks) {
+            sidebar.innerHTML += `
+                <div class="desbloqueia">
                     <ul>
                         ${subject.unlocks
-                ? `<h4> Desbloqueia: </h4>` +
-                subject.unlocks
-                    .map((unlock) => {
-                        return `<li>${courses[unlock].name}</li>`;
-                    })
-                    .join("")
-                : ``
-            }
+                            ? `<h4> Desbloqueia: </h4>` +
+                            subject.unlocks
+                                .map((unlock) => {
+                                    return `<li>${courses[unlock].name}</li>`;
+                                })
+                                .join("")
+                            : ``
+                        }
                     </ul>
-                </div>
-            </div>
-        `;
+                </div>`;
+        }
+
+        sidebar.innerHTML += `</div>`;
 
         document
-            .getElementById("closeSidebarButton")
+            .getElementById("close-sidebar-button")
             .addEventListener("click", hideSidebar);
         event.stopPropagation();
     });
