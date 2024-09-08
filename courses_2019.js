@@ -337,7 +337,9 @@ const courses = {
         "type": "OB",
         "CH": 32,
         "required": [
-            "programacao_2",
+            "programacao_2"
+        ],
+        "unlocks": [
             "tcc_1"
         ]
     },
