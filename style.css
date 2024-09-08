@@ -55,6 +55,7 @@ body {
 .index-div p {
     font-size: 1.25rem;
     margin: 1rem;
+    text-align: center;
 }
 
 .index-div a {
