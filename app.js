@@ -3,7 +3,7 @@ for (const subject in courses) {
         document.getElementById(`period_${courses[subject].period}`).innerHTML += `
             <div class="subject" id="${subject}">
                 <h3>${courses[subject].name}</h3>
-                <img src="info.svg" id="" class="info-button" style="width: 1rem;">
+                <img src="info.svg" class="info-button">
             </div>
         `
     } else {
@@ -16,7 +16,7 @@ for (const subject in courses) {
 
                 <div class="subject" id="${subject}">
                     <h3>${courses[subject].name}</h3>
-                    <img src="info.svg" id="" class="info-button" style="width: 1rem;">
+                    <img src="info.svg" class="info-button">
                 </div>
             </div>
         `
@@ -224,6 +224,16 @@ allInfoButton.forEach((infoButton) => {
                         }
                     </ul>
                 </div>`;
+        }
+
+        if (subject.CHrequired) {
+            sidebar.innerHTML += `
+            <div class="pre-requisitos"> 
+                <h4> Pré-requisitos: </h4>
+                <ul>
+                    <li>${subject.CHrequired} Horas Concluidas</li>
+                </ul>
+            </div>`;
         }
 
         if (subject.unlocks) {
