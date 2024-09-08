@@ -280,9 +280,11 @@ if (localStorage.getItem("progressHistory")) {
     progressHistory = JSON.parse(localStorage.getItem("progressHistory"));
     progressHistory.forEach((subjectid) => {
         let subject = document.getElementById(subjectid);
-        subject.classList.add("finished");
-        unlockSubjects(subject)
-        updateCheckSemester(subject)
+        if (subject) {
+            subject.classList.add("finished");
+            unlockSubjects(subject);
+            updateCheckSemester(subject);
+        }
     });
 }
 
