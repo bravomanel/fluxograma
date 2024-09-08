@@ -50,11 +50,11 @@ const courses = {
         ]
     },
     "calculo_1": {
-        "name": "Cálculo Diferencial I",
+        "name": "Cálculo I",
         "period": 1,
-        "code": "RCN 063",
+        "code": "RCN 019",
         "type": "OB",
-        "CH": 96,
+        "CH": 64,
         "unlocks": [
             "calculo_2"
         ]
@@ -100,7 +100,8 @@ const courses = {
         "unlocks": [
             "arquitetura_computadores",
             "estrutura_dados",
-            "paradigmas_programacao"
+            "paradigmas_programacao",
+            "prog_arquivo"
         ]
     },
     "logica_computacao": {
@@ -128,6 +129,7 @@ const courses = {
         ],
         "unlocks": [
             "metodos_numericos",
+            "equacoes_diferencias",
             "computacao_grafica"
         ]
     },
@@ -143,6 +145,7 @@ const courses = {
         "unlocks": [
             "prob_est",
             "metodos_numericos",
+            "equacoes_diferencias",
             "fisica_1",
             "fisica_3a",
             "calculo_3"
@@ -239,6 +242,17 @@ const courses = {
             "tcc_1"
         ]
     },
+    "equacoes_diferencias": {
+        "name": "Equações Diferenciais",
+        "period": 3,
+        "code": "RCN 022",
+        "type": "OB",
+        "CH": 64,
+        "required": [
+            "calculo_2",
+            "algebra_linear"
+        ]
+    },
     "analise_projeto_algoritmo": {
         "name": "Análise e Projeto de Algoritmos",
         "period": 4,
@@ -250,22 +264,6 @@ const courses = {
         ],
         "unlocks": [
             "algoritmo_grafos",
-            "tcc_1"
-        ]
-    },
-    "banco_dados": {
-        "name": "Banco de Dados",
-        "period": 4,
-        "code": "RCM 021",
-        "type": "OB",
-        "CH": 64,
-        "required": [
-            "estrutura_dados"
-        ],
-        "unlocks": [
-            "projeto_arquitetura_software",
-            "projeto_banco_dados",
-            "desenvolvimento_web",
             "tcc_1"
         ]
     },
@@ -332,6 +330,17 @@ const courses = {
             "tcc_1"
         ]
     },
+    "prog_arquivo": {
+        "name": "Programação com Arquivos",
+        "period": 4,
+        "code": "RCM 006",
+        "type": "OB",
+        "CH": 32,
+        "required": [
+            "programacao_2",
+            "tcc_1"
+        ]
+    },
     "sistemas_operacionais": {
         "name": "Sistemas Operacionais",
         "period": 5,
@@ -356,6 +365,19 @@ const courses = {
         ],
         "unlocks": [
             "redes_2"
+        ]
+    },
+    "banco_dados": {
+        "name": "Banco de Dados",
+        "period": 5,
+        "code": "RCM 021",
+        "type": "OB",
+        "CH": 64,
+        "required": [
+            "estrutura_dados"
+        ],
+        "unlocks": [
+            "projeto_banco_dados"
         ]
     },
     "computacao_grafica": {
@@ -392,16 +414,6 @@ const courses = {
             "compiladores"
         ]
     },
-    "desenvolvimento_web": {
-        "name": "Desenvolvimento Web",
-        "period": 5,
-        "code": "RCM 057",
-        "type": "OB",
-        "CH": 64,
-        "required": [
-            "banco_dados"
-        ]
-    },
     "projeto_arquitetura_software": {
         "name": "Projeto e Arquitetura de Software",
         "period": 5,
@@ -409,11 +421,7 @@ const courses = {
         "type": "OB",
         "CH": 64,
         "required": [
-            "banco_dados",
             "engenharia_software_1"
-        ],
-        "unlocks": [
-            "engenharia_software_2"
         ]
     },
     "sistemas_distribuidos": {
@@ -457,16 +465,6 @@ const courses = {
             "banco_dados"
         ]
     },
-    "engenharia_software_2": {
-        "name": "Engenharia de Software 2",
-        "period": 6,
-        "code": "RCM 058",
-        "type": "OB",
-        "CH": 64,
-        "required": [
-            "projeto_arquitetura_software"
-        ]
-    },
     "interface_humano-computador": {
         "name": "Interface Humano-Computador",
         "period": 6,
@@ -489,17 +487,25 @@ const courses = {
             "prob_est"
         ]
     },
+    "optativa_1": {
+        "name": "Optativa",
+        "period": 6,
+        "code": "-",
+        "type": "O",
+        "CH": 64,
+    },
     "tcc_1": {
         "name": "Projeto de Aplicação I-A",
         "period": 7,
         "code": "RCM 084",
         "type": "OB",
-        "CH": 32,
+        "CH": 64,
         "required": [
             "arquitetura_computadores",
             "calculo_3",
+            "equacoes_diferencias",
             "analise_projeto_algoritmo",
-            "banco_dados",
+            "prog_arquivo",
             "engenharia_software_1",
             "fisica_computacional",
             "fisica_3a",
@@ -510,11 +516,11 @@ const courses = {
         ],
     },
     "computacao_sociedade": {
-        "name": "Computação e Sociedade I",
+        "name": "Computação e Sociedade",
         "period": 7,
-        "code": "RCM 082",
+        "code": "RCM 031",
         "type": "OB",
-        "CH": 64,
+        "CH": 32,
         "CHrequired": 1440
     },
     "empreendedorismo": {
@@ -525,29 +531,22 @@ const courses = {
         "CH": 32,
         "CHrequired": 1440
     },
-    "proj_extensao_1": {
-        "name": "Projeto de Extensão",
+    "estagio": {
+        "name": "Estágio Supervisionado",
+        "period": 7,
+        "code": "RCM 027",
+        "type": "E",
+        "CH": 192,
+    },
+    "optativa_2": {
+        "name": "Optativa",
         "period": 7,
         "code": "-",
         "type": "O",
         "CH": 64,
     },
-    "proj_extensao_2": {
-        "name": "Projeto de Extensão",
-        "period": 7,
-        "code": "-",
-        "type": "O",
-        "CH": 64,
-    },
-    "proj_extensao_3": {
-        "name": "Projeto de Extensão",
-        "period": 7,
-        "code": "-",
-        "type": "O",
-        "CH": 64,
-    },
-    "proj_extensao_4": {
-        "name": "Projeto de Extensão",
+    "optativa_3": {
+        "name": "Optativa",
         "period": 7,
         "code": "-",
         "type": "O",
@@ -578,36 +577,22 @@ const courses = {
         "type": "AC",
         "CH": 32,
     },
-    "atividade_extensao": {
-        "name": "Atividades Complementares de Extensão",
-        "period": 8,
-        "code": "-",
-        "type": "AC",
-        "CH": 32,
-    },
-    "optativa_1": {
-        "name": "Optativa 1",
-        "period": 8,
-        "code": "-",
-        "type": "O",
-        "CH": 64,
-    },
-    "optativa_2": {
-        "name": "Optativa 2",
-        "period": 8,
-        "code": "-",
-        "type": "O",
-        "CH": 64,
-    },
-    "optativa_3": {
-        "name": "Optativa 3",
-        "period": 8,
-        "code": "-",
-        "type": "O",
-        "CH": 64,
-    },
     "optativa_4": {
-        "name": "Optativa 4",
+        "name": "Optativa",
+        "period": 8,
+        "code": "-",
+        "type": "O",
+        "CH": 64,
+    },
+    "optativa_5": {
+        "name": "Optativa",
+        "period": 8,
+        "code": "-",
+        "type": "O",
+        "CH": 64,
+    },
+    "optativa_6": {
+        "name": "Optativa",
         "period": 8,
         "code": "-",
         "type": "O",

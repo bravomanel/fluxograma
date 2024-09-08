@@ -558,7 +558,7 @@ const courses = {
         "period": 8,
         "code": "RCM 085",
         "type": "OB",
-        "CH": 64,
+        "CH": 32,
         "required": [
             "tcc_1",
         ],
