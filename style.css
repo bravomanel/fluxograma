@@ -28,6 +28,71 @@ body {
     display: none !important;
 }
 
+
+/* index page */
+
+.index-div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -75%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    max-width: 36rem;
+    color: var(--light-gray);
+}
+
+.index-div h1 {
+    color: var(--white);
+    font-size: 3rem;
+    margin: 1rem;
+}
+
+.index-div p {
+    font-size: 1.25rem;
+    margin: 1rem;
+}
+
+.index-div a {
+    color: var(--light-gray);
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+.index-div a:hover {
+    color: var(--white);
+    text-decoration: underline;
+}
+
+.index-div li {
+    list-style: none;
+    
+    margin: 1rem 0.25rem;
+}
+
+footer {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: var(--light-gray);
+    font-size: 0.75rem;
+}
+
+footer a {
+    color: var(--light-gray);
+}
+
+footer a:hover {
+    color: var(--white);
+}
+
+/* fluxogram */
+
 #fluxograma {
     display: flex;
     flex-direction: row;
@@ -94,6 +159,8 @@ h3 {
 .active {
     border: none;
 }
+
+/* checkbox */
 
 .check_period {
     display: flex;
